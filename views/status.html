@@ -1,0 +1,166 @@
+<html>
+<title>INTRA_API全局状态码</title>
+<link rel='stylesheet' type='text/css' href="../css/style.css" />
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+<div id='wrap'>
+<div id='title'>INTRA_API 全局状态码</div>
+<div class='section'>
+<table border="1">
+  <tr>
+    <th>状态码</th>
+	<th>描述</th>
+    <th>详细说明</th>
+	<th>来源接口</th>
+    <th>备注信息</th>
+  </tr>
+  <tr>
+    <td>00</td>
+    <td>success</td>
+	<td>API调用成功时</td>
+    <td>ALL</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>01</td>
+    <td>Query Error.</td>
+	<td>数据查询请求失败</td>
+    <td>ALL</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>02</td>
+    <td>No Records.</td>
+	<td>数据请求返回没有记录</td>
+    <td>ALL</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>03</td>
+    <td>Need articleids.</td>
+	<td>没有文章ID</td>
+    <td>getthumb</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>04</td>
+    <td>Need uid.</td>
+	<td>没有登录用户ID</td>
+    <td>sfz</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>05</td>
+    <td>Need sfz_name.</td>
+	<td>没有身份证上的姓名</td>
+    <td>sfz</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>06</td>
+    <td>Need sfz_number.</td>
+	<td>没有身份证号</td>
+    <td>sfz</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>07</td>
+    <td>Need upload_file.</td>
+	<td>有需要的文件没上传</td>
+    <td>sfz</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>08</td>
+    <td>fail upload_file.</td>
+	<td>文件上传失败</td>
+    <td>sfz</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>09</td>
+    <td>error upload_file_ext.</td>
+	<td>上传的文件格式不正确</td>
+    <td>sfz</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>fail save_file.</td>
+	<td>保存上传的文件失败</td>
+    <td>sfz</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>error not_allow_modify.</td>
+	<td>不允许修改记录</td>
+    <td>sfz</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>No article_id.</td>
+	<td>没有文章ID</td>
+    <td>postarticlegood</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>No member_id.</td>
+	<td>没有登录</td>
+    <td>postarticlegood</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td>Already Post.</td>
+	<td>已经评过</td>
+    <td>sfz</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>No content.</td>
+	<td>评论不能为空</td>
+    <td>postarticlecomment</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>95</td>
+    <td>Sign is invalid.</td>
+	<td>无效的签名</td>
+    <td>ALL</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>96</td>
+    <td>Need sign.</td>
+	<td>缺少签名</td>
+    <td>ALL</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>97</td>
+    <td>Need timestamp.</td>
+	<td>缺少时间戳</td>
+    <td>ALL</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>98</td>
+    <td>Appid is invalid.</td>
+	<td>无效的appid</td>
+    <td>ALL</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>99</td>
+    <td>Need appid.</td>
+	<td>缺少appid</td>
+    <td>ALL</td>
+	<td></td>
+  </tr>
+</table>
+</div>
+</div>
+</html>
