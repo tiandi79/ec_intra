@@ -9,7 +9,7 @@
 /*    0.0.2: 文件位置调整         */
 
 define('ROOT_PATH', str_replace('intra_api/common/init.php', '', str_replace('\\', '/', __FILE__)));
-define('MY_APPID', ''); //appid
+define('MY_APPID', ''); //必要参数，用户唯一标示
 define('MY_CODE', '');  //密钥
 
 require(ROOT_PATH . 'config/config.php');
