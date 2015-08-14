@@ -2,15 +2,18 @@
 /*  描述：内部使用API获取文章评论        */
 /*  名称：getarticlecomment              */
 /*  作者：tiandi                         */
-/*  版本：0.0.2                          */
+/*  版本：0.0.3                          */
 /*  生成时间：2015.7.6                   */
-/*  修订时间：2015.7.8                   */
+/*  修订时间：2015.8.14                  */
+/*  update:                              */
+/*  0.0.3 修复没有过滤文章ID的问题       */
+
 
 if (isset($_REQUEST['help'])) {
 	require('../models/help.php');
 	$help = new help("getarticlecomment");
-	$help->set_ver("0.0.2");
-	$help->set_time("2015.7.8");
+	$help->set_ver("0.0.3");
+	$help->set_time("2015.8.14");
 	$help->set_des("获取文章评论");
 	$help->set_indeed(array("article_id:文章ID"));
 	$help->set_noindeed(array("page:页码"));
@@ -23,10 +26,10 @@ if (isset($_REQUEST['help'])) {
 
 require('../common/init.php');
 
-$articleids = isset($request["article_id"])? $request["article_id"]:'';
+$articleid = isset($request["article_id"])? $request["article_id"]:'';
 $page = isset($request["page"])? $request["page"]:1;
 
-if($articleids == '') {
+if($articleid == '') {
 	$json->set_status("12");
 	$json->set_msg("No article_id.");
 	$json->create_json();
@@ -40,19 +43,19 @@ $db_name_image = "image_image";
 $limited = " limit ".(string)(10*($page-1)).",10";
 
 
-/*
+//正式用
 $sql = "select parent_id,author,content,is_useful,pubtime,c.url as avatar from ".DB_PREFIX.$db_name_comments ." as a".
 	   " left join ".DB_PREFIX.$db_name_member ." as b on b.member_id = a.author_id ".
 	   " left join ".DB_PREFIX.$db_name_image ." as c on c.image_id = b.avatar ".
-	   " where display = 'true' and parent_id = 0 order by pubtime desc".$limited;
-*/
+	   " where display = 'true' and parent_id = 0 and article_id = ".$articleid." order by pubtime desc".$limited;
+//
 
-//测试用
+/*测试用
 $sql = "select parent_id,author,content,is_useful,pubtime,c.url as avatar from ".DB_PREFIX.$db_name_comments ." as a".
 	   " left join ".DB_PREFIX.$db_name_member ." as b on b.member_id = a.author_id ".
 	   " left join ".DB_PREFIX.$db_name_image ." as c on c.image_id = b.avatar ".
 	   " where parent_id = 0 order by pubtime desc".$limited;
-
+*/
 $rs = $apidb->query($sql);
 //echo $sql;
 
